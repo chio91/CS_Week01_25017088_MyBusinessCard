@@ -2,6 +2,7 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        private bool isFirstPhoto = true;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,16 @@ namespace WinFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.KakaoTalk_20260308_182551806;
+            if (isFirstPhoto)
+            {
+                pictureBox1.Image = Properties.Resources.KakaoTalk_20260308_182551806;
+                isFirstPhoto = false;
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.a_1772697609226;
+                isFirstPhoto = true;
+            }
         }
     }
 }
